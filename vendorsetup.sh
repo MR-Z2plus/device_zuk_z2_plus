@@ -1,0 +1,2 @@
+add_lunch_combo tipsy_z2_plus-userdebug
+
