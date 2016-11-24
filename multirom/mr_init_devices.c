@@ -14,31 +14,16 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/graphics/fb1",
 
     "/sys/block/mmcblk0*",
-    "/sys/devices/soc/7464900.sdhci",
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001",
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block",
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p23", //modem
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p40", //persist
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p31", //splash
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p15", //recovery
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p14", //boot
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p39", //cache
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p48", //data
-    "/sys/devices/soc/7464900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p16", //system
 
 
-    // boot and data
-    //"/sys/block/mmcblk0/mmcblk0p14", //boot
-    //"/sys/block/mmcblk0/mmcblk0p48", //data
+    "/sys/block/mmcblk0/mmcblk0p14", //boot
+    "/sys/block/mmcblk0/mmcblk0p48", //data
 
-    // system and cache
-    //"/sys/block/mmcblk0/mmcblk0p16", //system
-    //"/sys/block/mmcblk0/mmcblk0p39", //cache
+     "/sys/block/mmcblk0/mmcblk0p16", //system
+    "/sys/block/mmcblk0/mmcblk0p39", //cache
 
-    // Mount persist and firmware
-    //"/sys/block/mmcblk0/mmcblk0p40", // persist
-    //"/sys/block/mmcblk0/mmcblk0p23", // firmware
+    "/sys/block/mmcblk0/mmcblk0p40", // persist
+    "/sys/block/mmcblk0/mmcblk0p23", // modem
 
 	"/sys/bus*",
 	"/sys/devices*",
@@ -88,9 +73,6 @@ const char *mr_init_devices[] =
 
     // for qualcomm overlay - /dev/ion
     "/sys/devices/virtual/misc/ion",
-	// Encryption
-	//"/sys/devices/virtual/misc/device-mapper",
-	//"/sys/devices/virtual/qseecom/qseecom",
 
     NULL
 };

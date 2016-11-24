@@ -20,8 +20,8 @@
 # definition file).
 #
 
-# Boldly go.
-USE_CLANG_PLATFORM_BUILD := true
+# Inherit from oppo-common
+-include device/oppo/common/BoardConfigCommon.mk
 
 TARGET_OTA_ASSERT_DEVICE := z2,Z2,z2plus,z2_plus
 
@@ -105,7 +105,6 @@ QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
 
 # Camera
-BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charger
@@ -116,9 +115,6 @@ BOARD_HAL_STATIC_LIBRARIES += libhealthd.zuk
 # CM Hardware
 BOARD_HARDWARE_CLASS += $(PLATFORM_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/touch/tp_dev/gesture_on"
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw
 
 # CNE and DPM
 TARGET_LDPRELOAD := libNimsWrap.so
@@ -171,9 +167,6 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3154116608
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 57436708864
 BOARD_FLASH_BLOCK_SIZE := 262144
-
-# QCOM Power
-TARGET_POWERHAL_VARIANT := qcom
 
 # RIL
 TARGET_RIL_VARIANT := caf
@@ -267,5 +260,5 @@ MR_DEVICE_SPECIFIC_VERSION := b
 
 #Force populating /dev/block/platform/soc/7464900.sdhci/by-name/
 #from the emmc
-MR_POPULATE_BY_NAME_PATH := "/dev/block/platform/soc/7464900.sdhci/by-name/"
+MR_POPULATE_BY_NAME_PATH := "/dev/block/bootdevice/by-name/"
 
