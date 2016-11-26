@@ -25,9 +25,9 @@ const char *mr_init_devices[] =
     "/sys/block/mmcblk0/mmcblk0p40", // persist
     "/sys/block/mmcblk0/mmcblk0p23", // modem
 
-	"/sys/bus*",
-	"/sys/devices*",
-	"/sys/bus/mmc*",
+    "/sys/bus*",
+    "/sys/devices*",
+    "/sys/bus/mmc*",
     "/sys/bus/mmc/drivers/mmcblk",
     "/sys/bus/mmc/drivers/mmcblk*",
     "/sys/module/sdhci",
@@ -35,11 +35,11 @@ const char *mr_init_devices[] =
     "/sys/module/sdhci_msm",
     "/sys/module/sdhci_msm*",
     "/sys/module/mmc_core",
-	"/sys/module/mmcblk",
+    "/sys/module/mmcblk",
 
-	// looks like storage to me
-	"/sys/devices/soc/7464900.sdhci/mmc_host*",
-	"/sys/devices/soc/74a4900.sdhci/mmc_host*",
+    // looks like storage to me
+    "/sys/devices/soc/7464900.sdhci/mmc_host*",
+    "/sys/devices/soc/74a4900.sdhci/mmc_host*",
 
     // for input
     "/sys/devices/virtual/input*",

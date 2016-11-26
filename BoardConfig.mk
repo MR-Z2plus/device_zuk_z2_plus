@@ -229,7 +229,7 @@ TWHAVE_SELINUX := true
 # MR config. MultiROM also uses parts of TWRP config
 TARGET_RECOVERY_IS_MULTIROM := true
 MR_NO_KEXEC := 2
-MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
+MR_NO_KEXEC := enabled
 MR_CONTINUOUS_FB_UPDATE := true
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
@@ -239,11 +239,11 @@ MR_FSTAB := $(PLATFORM_PATH)/recovery/root/etc/twrp.fstab
 MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := $(PLATFORM_PATH)/multirom/mr_init_devices.c
 MR_RD_ADDR := 0x82500000
-MR_KEXEC_MEM_MIN := 0x83400000
+MR_KEXEC_MEM_MIN := 0xac000000
 MR_KEXEC_DTB := true
 MR_DEVICE_HOOKS := $(PLATFORM_PATH)/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
-MR_DEVICE_VARIANTS := z2_plus
+MR_DEVICE_VARIANTS := z2_plus Z2_Plus Z2131 z2131 Z2 z2 Z2Plus z2plus
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := $(PLATFORM_PATH)/multirom/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
@@ -256,7 +256,8 @@ MR_DEV_BLOCK_BOOTDEVICE := true
 include $(PLATFORM_PATH)/multirom/MR_REC_VERSION.mk
 BOARD_MKBOOTIMG_ARGS += --board mrom$(MR_REC_VERSION)
 MR_REC_VERSION := $(shell date -u +%Y%m%d)-01
-MR_DEVICE_SPECIFIC_VERSION := b
+MR_DEVICE_SPECIFIC_VERSION := e
+MR_ENCRYPTION := true
 
 #Force populating /dev/block/platform/soc/7464900.sdhci/by-name/
 #from the emmc
